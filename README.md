@@ -1,4 +1,4 @@
-﻿# Cryptocurrency application
+﻿# ESUPERFUND IT
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/3f1feddc49aa46c8a738730eccff7a96)](https://www.codacy.com/gh/lexlex47/ESUPERFUND/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=lexlex47/ESUPERFUND&amp;utm_campaign=Badge_Grade)
 
 This project that ESUPERFUND data team receives raw data from the banks, brokers, and other third-party data vendors.
