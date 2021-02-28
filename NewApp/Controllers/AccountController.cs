@@ -130,7 +130,7 @@ namespace NewApp.Controllers
         public ActionResult GetLog()
         {
             int Counter = 1;
-            string Filedone = "Here you go with the log Final Status Showing whether the data can pass the validation rules or not!" + "\n" + "\n" + "\n";
+            string Filedone = "The log Final Status Showing whether the data can pass the validation rules or not!" + "\n" + "\n" + "\n";
             //使用store procedures处理log 信息
             var ResultLog = db.SpGetLog().ToList();
 
