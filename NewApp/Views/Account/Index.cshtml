@@ -1,0 +1,95 @@
+﻿@model IEnumerable<NewApp.Models.Bank_Account>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<h2>Bank Account</h2>
+
+<a href="@Url.Action("GetLog","Account")">
+    <button type="button" onclick="DownloadLog()" id="btnresultfile" style="margin-bottom: 10px; margin-left: 10px;" class="btn btn-w-m btn-success  btn-sm pull-right m-xs">
+        <i class="fa fa-download"></i>  Download Result File
+    </button>
+</a>
+<button type="button" id="btnshowresultfile" disabled style="display:none; margin-bottom: 10px;" class="btn btn-w-m btn-info  btn-sm pull-right m-xs">
+    <i class="fa fa-spinner fa-spin fast" style="margin-right: 5%;"></i> Please wait! Downloading Log
+</button>
+
+<a href="@Url.Action("Index","Bank_Balance")" target="_blank">
+    <button type="button" style="margin-bottom: 10px; margin-left: 10px;" class="btn btn-w-m btn-info  btn-sm pull-right m-xs">
+        <i class="fa fa-download"></i>  Bank Balance
+    </button>
+</a>
+
+
+<a href="@Url.Action("Index","Bank_Transaction")" target="_blank">
+    <button type="button" style="margin-bottom: 10px; margin-left: 10px;" class="btn btn-w-m btn-info  btn-sm pull-right m-xs">
+        <i class="fa fa-download"></i>  Bank Transaction
+    </button>
+</a>
+
+<a href="@Url.Action("Index", "Raw_Bank_Balance")" target="_blank">
+    <button type="button" style="margin-bottom: 10px; margin-left: 10px;" class="btn btn-w-m btn-default  btn-sm pull-right m-xs">
+        <i class="fa fa-download"></i>  Raw Bank Balance
+    </button>
+</a>
+<a href="@Url.Action("Index", "Raw_Bank_Transaction")" target="_blank">
+    <button type="button" style="margin-bottom: 10px; margin-left: 10px;" class="btn btn-w-m btn-default  btn-sm pull-right m-xs">
+        <i class="fa fa-download"></i>  Raw Bank Transaction
+    </button>
+</a>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AccNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssetId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OpenDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CloseDate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssetId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OpenDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CloseDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<script>
+    function DownloadLog() {
+        $("#btnUploadControl").hide();
+        $("#btnUploadshow").hide();
+        $("#btnresultfile").hide();
+        $("#btnshowresultfile").show();
+    }
+</script>

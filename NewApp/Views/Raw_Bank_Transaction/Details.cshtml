@@ -1,0 +1,66 @@
+﻿@model NewApp.Models.Raw_Bank_Transaction
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Raw_Bank_Transaction</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FinalStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinalStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RelatedId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RelatedId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TransactionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TransactionDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RunningBalance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RunningBalance)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
